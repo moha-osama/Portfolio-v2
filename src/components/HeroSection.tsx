@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import trackEvent from '../../utils/analytics';
 
 // Custom Resume Icon (simple SVG)
 const ResumeIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -59,7 +60,7 @@ export const HeroSection = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden mt-16 sm:mt-0">
       {/* Animated grid background */}
       <div className="absolute inset-0 grid-background opacity-20"></div>
 
@@ -87,7 +88,7 @@ export const HeroSection = () => {
                 <div className="text-[#00d4ff]">$ whoami</div>
                 
                 <motion.h1 
-                  className="text-4xl md:text-5xl lg:text-6xl text-white"
+                  className="text-3xl md:text-5xl lg:text-6xl text-white"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
@@ -178,6 +179,7 @@ export const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.a
+              onClick={() => trackEvent("services_viewed", { service: "" })}
               href="#services"
               whileHover={{ y: -2 }}
               className="px-8 py-3 bg-gradient-to-r from-[#00d4ff] to-[#00ffff] text-black rounded-lg hover:shadow-lg hover:shadow-[#00d4ff]/50 transition-all duration-300 font-mono"

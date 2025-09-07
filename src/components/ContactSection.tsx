@@ -60,7 +60,7 @@ export const ContactSection = () => {
         >
           <h2 className="text-4xl mb-4">
             <span className="text-[#00d4ff] font-mono">{'>'}</span>
-            <span className="text-white ml-2">contact.init()</span>
+            <span className="text-white ml-2 text-3xl font-normal sm:text-4xl">contact.init()</span>
           </h2>
           <p className="text-gray-400 font-mono">let's build something extraordinary together</p>
         </motion.div>

@@ -125,7 +125,7 @@ export const ServicesSection = () => {
         >
           <h2 className="text-4xl mb-4">
             <span className="text-[#00d4ff] font-mono">{'>'}</span>
-            <span className="text-white ml-2">my_services.json</span>
+            <span className="text-white ml-2 text-3xl font-normal sm:text-4xl">my_services.json</span>
           </h2>
           <p className="text-gray-400 font-mono">comprehensive solutions for modern digital challenges</p>
         </motion.div>
@@ -223,7 +223,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
           <div className="text-sm text-gray-400 font-mono">
             <span style={{ color: service.color }}>$</span> features.list()
           </div>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {service.features.map((feature: string, i: number) => (
               <motion.div
                 key={i}
