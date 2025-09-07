@@ -60,7 +60,7 @@ export const HeroSection = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden mt-16 sm:mt-0">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden mt-6 sm:mt-0">
       {/* Animated grid background */}
       <div className="absolute inset-0 grid-background opacity-20"></div>
 
@@ -76,7 +76,7 @@ export const HeroSection = () => {
             {/* Terminal-style content */}
             <div className="glassmorphism rounded-xl p-8 border border-[#00d4ff]/30 max-w-4xl">
               {/* Terminal header */}
-              <div className="flex items-center space-x-2 mb-8">
+              <div className="hidden sm:flex items-center space-x-2 mb-8">
                 <div className="w-3 h-3 rounded-full bg-[#ff0080]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#00ffff]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#00d4ff]"></div>
@@ -162,7 +162,7 @@ export const HeroSection = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 4.5 }}
-                  className="flex items-center space-x-2 pt-4"
+                  className="hidden sm:flex items-center space-x-2 pt-4"
                 >
                   <span className="text-[#8a2be2]">$</span>
                   <span className="text-gray-400">ready_to_collaborate</span>
@@ -190,7 +190,7 @@ export const HeroSection = () => {
             <motion.a
               href="#projects"
               whileHover={{ y: -2 }}
-              className="px-8 py-3 border border-[#8a2be2] text-[#8a2be2] rounded-lg hover:bg-[#8a2be2]/10 hover:shadow-lg hover:shadow-[#8a2be2]/50 transition-all duration-300 font-mono"
+              className="hidden sm:block px-8 py-3 border border-[#8a2be2] text-[#8a2be2] rounded-lg hover:bg-[#8a2be2]/10 hover:shadow-lg hover:shadow-[#8a2be2]/50 transition-all duration-300 font-mono"
             >
               View Projects
             </motion.a>
