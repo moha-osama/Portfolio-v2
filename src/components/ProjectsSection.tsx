@@ -1,70 +1,64 @@
 import { motion } from 'motion/react';
-import { ExternalLink, Github, Linkedin, Mail, FileText, Code } from 'lucide-react';
-// Social links for use in socials
-const socialLinks = [
-  {
-    label: "github",
-    icon: Github,
-    link: "https://github.com/moha-osama",
-  },
-  {
-    label: "linkedin",
-    icon: Linkedin,
-    link: "https://www.linkedin.com/in/mohamed-osama-4a38a0206/",
-  },
-  {
-    label: "resume",
-    icon: FileText,
-    link: "https://drive.google.com/file/d/1pQoI4FPvK6Jr5SKrKt1fl2JP50Df8glX/view?usp=drive_link",
-  },
-  {
-    label: "mail",
-    icon: Mail,
-    link: "mailto:zmuhamedosama@gmail.com",
-  },
-];
+import { ExternalLink, Github, Code } from 'lucide-react';
+
+import cardImage from '/img/car-showcase.webp';
+import dreamBilll from '/img/dreambill.webp';
+import jewelry from '/img/jewelry.webp';
+import nuiq from '/img/nuiq.webp';
+import shoestore from '/img/shoestore.webp';
 
 const projects = [
   {
-    id: 1,
-    title: "Neural Network Visualizer",
-    description: "Interactive web application for visualizing neural network architectures and training processes in real-time.",
-    tech: ["React", "Three.js", "TensorFlow.js", "WebGL"],
-    image: "ai neural network",
-    github: "#",
-    live: "#",
-    status: "completed"
-  },
-  {
     id: 2,
-    title: "Quantum Dashboard",
-    description: "Real-time monitoring dashboard for quantum computing systems with cyberpunk-inspired design.",
-    tech: ["Next.js", "D3.js", "WebSockets", "Redis"],
-    image: "quantum computing dashboard",
-    github: "#",
-    live: "#",
-    status: "in-progress"
-  },
-  {
-    id: 3,
-    title: "Blockchain Explorer",
-    description: "Decentralized application for exploring blockchain transactions with advanced analytics.",
-    tech: ["Vue.js", "Web3.js", "Ethereum", "GraphQL"],
-    image: "blockchain technology",
-    github: "#",
-    live: "#",
+    title: "Dreambill",
+    description: "With DreamBill, you can easily create and manage your invoices, track your payments, and get a clear overview of your expenses.",
+    tech: ["Next.js", "TypeScript", "WebSockets", "Tailwind CSS", 'ANT Design'],
+    image: dreamBilll,
+    github: "https://github.com/moha-osama/DreamBill",
+    live: "https://www.dreambill.io/",
     status: "completed"
   },
   {
     id: 4,
-    title: "Cybersecurity Hub",
-    description: "Comprehensive security monitoring platform with threat detection and visualization.",
-    tech: ["Python", "Django", "Docker", "Elasticsearch"],
-    image: "cybersecurity monitoring",
+    title: "Nuiq",
+    description: "automatic therapy notes writer.",
+    tech: ["PHP", "Javascript", "XAMPP", "Bootstrap", "jQuery", "MySQL", "HTML", "CSS", "Rest APIs"],
+    image: nuiq,
     github: "#",
-    live: "#",
-    status: "planning"
-  }
+    live: "https://nuiq.com/",
+    status: "in-progress"
+  },
+  {
+    id: 6,
+    title: "Shoe Store",
+    description: "automatic therapy notes writer.",
+    tech: ["React JS","React Router","Redux","Tailwind CSS"],
+    image: shoestore,
+    github: "https://github.com/moha-osama/Shoe-Store",
+    live: "https://shoe-store-moha-osama.vercel.app/",
+    status: "completed"
+  },
+  {
+    id: 1,
+    title: "Cars Showcase",
+    description: "The Next.js Cars Showcase is a frontend application that displays a collection of cars and their details. This application is built using Next.js for server-side rendering.",
+    tech: ["Next.js","HeadlessUI", "Tailwind CSS", "TypeScript"],
+    image: cardImage,
+    github: "https://github.com/moha-osama/car_showcase",
+    live: "https://car-showcase-jade.vercel.app/",
+    status: "completed"
+  },
+  {
+    id: 3,
+    title: "Jewelry Store",
+    description: "Responsive online jewelry store built in reactJs, The goal of this project was to create an easy-to-use and visually appealing e-commerce website for buying jewelry.",
+    tech: ["React JS","React Router","Redux","React Slick library","REST APIs"],
+    image: jewelry,
+    github: "https://github.com/moha-osama/Jewelry-Store",
+    live: "https://jewelry-store-demo-app.netlify.app/",
+    status: "completed"
+  },
+
 ];
 
 export const ProjectsSection = () => {
@@ -128,24 +122,39 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
           <Code size={20} className="text-[#8a2be2]" />
         </div>
 
-        {/* Project image placeholder with neon effect */}
+        {/* Project image with overlay */}
         <div className="relative mb-6 h-48 rounded-lg overflow-hidden bg-gradient-to-br from-[#0a0a0f] to-[#1a1a2e] border border-[#00d4ff]/20">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#00d4ff]/10 via-transparent to-[#8a2be2]/10"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-2 border-2 border-[#00ffff] rounded-lg flex items-center justify-center">
-                <Code size={32} className="text-[#00ffff]" />
+          {/* Display actual image if available, otherwise show placeholder */}
+          {typeof project.image === 'string' && !project.image.startsWith('/') && !project.image.includes('.') ? (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00d4ff]/10 via-transparent to-[#8a2be2]/10"></div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-2 border-2 border-[#00ffff] rounded-lg flex items-center justify-center">
+                    <Code size={32} className="text-[#00ffff]" />
+                  </div>
+                  <p className="text-xs text-gray-400 font-mono">{project.image}</p>
+                </div>
               </div>
-              <p className="text-xs text-gray-400 font-mono">{project.image}</p>
-            </div>
-          </div>
+            </>
+          ) : (
+            // Actual image display
+            <>
+              <img loading="lazy" 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-full object-cover object-top transform scale-105 group-hover:scale-100 transition-transform duration-300"
+              />
+              {/* Base overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              
+              {/* Colorful tech overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00d4ff]/20 via-transparent to-[#8a2be2]/20 opacity-60"></div>
+            </>
+          )}
           
-          {/* Hover overlay */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0 }}
-            className="absolute inset-0 bg-gradient-to-t from-[#00d4ff]/20 to-transparent"
-          />
+          {/* Default overlay - shown by default, hidden on card hover */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#00d4ff]/40 via-[#00d4ff]/20 to-transparent group-hover:opacity-0 transition-opacity duration-300" />
         </div>
 
         <div className="space-y-4">

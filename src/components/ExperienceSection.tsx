@@ -42,20 +42,6 @@ export const ExperienceSection = () => {
     <section id="experience" className="py-20 relative overflow-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 grid-background opacity-5"></div>
-      
-      {/* Floating geometric shapes */}
-      <motion.div
-        className="absolute top-32 right-10 w-20 h-20 border border-[#00ffff]/30"
-        animate={{ 
-          rotate: [0, 360, 0]
-        }}
-        transition={{ 
-          duration: 12, 
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -84,7 +70,7 @@ export const ExperienceSection = () => {
         </div>
 
         {/* Career Summary */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -94,7 +80,7 @@ export const ExperienceSection = () => {
           <div className="font-mono text-sm space-y-2">
             <div className="text-[#00d4ff]">$ ./career_summary.sh</div>
             <div className="text-gray-300 mt-4">
-              <span className="text-[#00ffff]">Total Experience:</span> 1+ years in frontend development and IT
+              <span className="text-[#00ffff]">Total Experience:</span> 2+ years in web development
             </div>
             <div className="text-gray-300">
               <span className="text-[#8a2be2]">Specialization:</span> Frontend development, UI components, and system security
@@ -106,7 +92,7 @@ export const ExperienceSection = () => {
               <span className="text-green-400">Status:</span> Currently contributing at gamp.ai
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
@@ -165,7 +151,7 @@ const ExperienceCard = ({ experience, index }: { experience: any; index: number 
             <span style={{ color: experience.color }}>$</span> tech_stack.list()
           </div>
           <div className="flex flex-wrap gap-2">
-            {experience.technologies.map((tech, i) => (
+            {experience.technologies.map((tech:any, i:any) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, scale: 0.8 }}

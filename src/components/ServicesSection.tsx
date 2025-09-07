@@ -1,43 +1,99 @@
 import { motion } from 'motion/react';
-import { Code, BarChart3, Database, Palette } from 'lucide-react';
+import { Code, Database, Rocket, Bot, BarChart, Cloud } from 'lucide-react';
 
 const services = [
   {
     id: 1,
-    title: "Full-Stack Development",
-    icon: Code,
-    description: "End-to-end web & mobile applications built with modern frameworks. From React frontends to scalable backend APIs.",
-    features: ["React/Next.js", "Node.js APIs", "Mobile Apps", "Database Design"],
+    title: "Backend Development",
+    icon: Database,
+    description:
+      "Robust, scalable, and secure backend systems tailored to business needs. From APIs to complex data pipelines.",
+    features: [
+      "RESTful & GraphQL APIs",
+      "Postgres, MongoDB, Redis",
+      "Authentication & RBAC",
+      "Real-time Systems"
+    ],
+    color: "#8a2be2",
+    gradient: "from-[#8a2be2] to-[#6a1b9a]"
+  },
+  // {
+  //   id: 2,
+  //   title: "Product Analytics & Experimentation",
+  //   icon: BarChart,
+  //   description:
+  //     "Data-driven decision making through tracking systems, dashboards, and A/B testing frameworks.",
+  //   features: [
+  //     "Event Tracking (GA4, Mixpanel)",
+  //     "A/B Testing & Experiment Design",
+  //     "Funnel & Retention Analysis",
+  //     "Custom Dashboards & Reports"
+  //   ],
+  //   color: "#ff6b35",
+  //   gradient: "from-[#ff6b35] to-[#e55a2b]"
+  // },
+  {
+    id: 3,
+    title: "AI & NLP Integration",
+    icon: Bot,
+    description:
+      "Enhancing apps with AI features like sentiment analysis, recommendations, and intelligent chatbots.",
+    features: [
+      "Chatbots & Virtual Assistants",
+      "Search & Knowledge Retrieval",
+      "Personalization & Analytics",
+      "Automation & Workflow AI"
+
+    ],
     color: "#00d4ff",
     gradient: "from-[#00d4ff] to-[#0099cc]"
   },
   {
-    id: 2,
-    title: "Product Analytics",
-    icon: BarChart3,
-    description: "Data-driven insights & tracking implementation. A/B testing, user behavior analysis, and performance metrics.",
-    features: ["A/B Testing", "Event Tracking", "User Analytics", "Conversion Optimization"],
-    color: "#8a2be2",
-    gradient: "from-[#8a2be2] to-[#6a1b9a]"
-  },
-  {
-    id: 3,
-    title: "Scalable Architecture",
-    icon: Database,
-    description: "Redis caching, Azure cloud solutions, and robust API design for applications that grow with your business.",
-    features: ["Cloud Infrastructure", "API Architecture", "Database Optimization", "Performance Scaling"],
-    color: "#00ffff",
-    gradient: "from-[#00ffff] to-[#00cccc]"
-  },
-  {
     id: 4,
-    title: "UI/UX Engineering",
-    icon: Palette,
-    description: "Modern, accessible, user-focused interfaces. Design systems, responsive layouts, and exceptional user experiences.",
-    features: ["Design Systems", "Responsive Design", "Accessibility", "User Experience"],
-    color: "#ff0080",
-    gradient: "from-[#ff0080] to-[#cc0066]"
-  }
+    title: "Frontend Development",
+    icon: Code,
+    description:
+      "End-to-end solutions combining modern frontend frameworks with solid backend foundations.",
+    features: [
+      "React/Next.js Frontends",
+      "Component Systems (Storybook)",
+      "PWAs & Real-time Dashboards",
+      "Secure 3rd-Party Integrations"
+    ],
+    color: "#ff6b35",
+  gradient: "from-[#ff6b35] to-[#e55a2b]"
+  },
+  // {
+  //   id: 5,
+  //   title: "Cloud & DevOps",
+  //   icon: Cloud,
+  //   description:
+  //     "Production-ready applications leveraging cloud infrastructure and DevOps best practices.",
+  //   features: [
+  //     "Docker & Kubernetes",
+  //     "CI/CD Pipelines",
+  //     "Terraform & Infrastructure as Code",
+  //     "Monitoring & Observability"
+  //   ],
+  //   color: "#f59e0b",
+  //   gradient: "from-[#f59e0b] to-[#d97706]"
+  // }
+  {
+  id: 5,
+  icon: Rocket,
+  title: "Performance Optimization",
+  status: "service_active",
+  description: "High-performance backend systems optimized for speed, scalability, and efficiency. From database tuning to caching and load balancing.",
+  features: [
+    "Database Query Optimization",
+    "Performance Monitoring (Sentry, Web Vitals)",
+    "Asynchronous Processing (Queues, Workers)",
+    "Code Splitting & Lazy Loading",
+  ],
+    color: "#f59e0b",
+    gradient: "from-[#f59e0b] to-[#d97706]"
+}
+
 ];
 
 export const ServicesSection = () => {
@@ -80,7 +136,26 @@ export const ServicesSection = () => {
             <ServiceCard key={service.id} service={service} index={index} />
           ))}
         </div>
-
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <div className="glassmorphism rounded-xl p-8 border border-[#00ffff]/30 max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-6 font-mono">
+              <span className="text-[#00ffff]">Ready to collaborate?</span> Let's build something that makes a difference.
+            </p>
+            <motion.a
+              href="#contact"
+              whileHover={{ y: -2 }}
+              className="inline-flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-[#00d4ff] to-[#00ffff] text-black rounded-lg hover:shadow-lg hover:shadow-[#00d4ff]/50 transition-all duration-300 font-mono"
+            >
+              <span>./initiate_contact.sh</span>
+            </motion.a>
+          </div>
+        </motion.div>
 
       </div>
     </section>

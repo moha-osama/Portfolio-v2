@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @custom-variant dark (&:is(.dark *));
 
+/* Global text selection styling */
+::selection {
+  background-color: #6b72807c; /* Gray-500 */
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #6b728079; /* Gray-500 */
+  color: #ffffff;
+}
+
 :root {
   --font-size: 16px;
   --background: #0a0a0f;

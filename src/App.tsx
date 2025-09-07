@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
-import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { ProjectsSection } from './components/ProjectsSection';
@@ -114,8 +113,6 @@ export default function App() {
               <div className="h-px bg-gradient-to-r from-transparent via-[#00d4ff] to-transparent"></div>
             </div>
           </motion.div>
-
-          <AboutSection />
 
           {/* Section divider with neon line */}
           <motion.div

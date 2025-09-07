@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Github, Linkedin, Mail } from 'lucide-react';
@@ -61,10 +60,10 @@ export const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      
+      {/* Animated grid background */}
       <div className="absolute inset-0 grid-background opacity-20"></div>
 
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto max-w-fit px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +71,7 @@ export const HeroSection = () => {
           className="space-y-8"
         >
           {/* Main content - left aligned */}
-          <div className="mx-auto w-fit text-left space-y-8">
+          <div className="max-w-6xl mx-auto text-left space-y-8">
             {/* Terminal-style content */}
             <div className="glassmorphism rounded-xl p-8 border border-[#00d4ff]/30 max-w-4xl">
               {/* Terminal header */}
@@ -109,10 +108,10 @@ export const HeroSection = () => {
                   transition={{ duration: 0.8, delay: 1.5 }}
                   className="space-y-2"
                 >
-                  <div className="text-[#00d4ff]">$ cat role.txt</div>
+                  {/* <div className="text-[#00d4ff]">$ cat role.txt</div>
                   <div className="text-2xl md:text-3xl text-[#00ffff] pl-4">
-                    Software Engineer
-                  </div>
+                    Full Stack Developer
+                  </div> */}
                 </motion.div>
 
                 <motion.div
@@ -123,10 +122,8 @@ export const HeroSection = () => {
                 >
                   <div className="text-[#00d4ff]">$ cat summary.md</div>
                   <div className="text-gray-300 leading-relaxed pl-4 max-w-2xl">
-                    Expert Full Stack Developer & Product-Focused Builder with extensive experience 
-                    developing <span className="text-[#00ffff]">scalable applications</span> from the ground up. 
-                    I bring a <span className="text-[#8a2be2]">product analytics mindset</span> to ensure 
-                    applications deliver <span className="text-[#ff0080]">measurable value</span> to users and businesses.
+                    Expert Full Stack Developer & Product Focused Builder with extensive experience 
+                    developing <span className="text-[#00ffff]">scalable applications</span> from the ground up.
                   </div>
                 </motion.div>
 
@@ -168,13 +165,6 @@ export const HeroSection = () => {
                 >
                   <span className="text-[#8a2be2]">$</span>
                   <span className="text-gray-400">ready_to_collaborate</span>
-                  <motion.span
-                    animate={{ opacity: [1, 0, 1] }}
-                    transition={{ duration: 1, repeat: Infinity }}
-                    className="text-[#00d4ff]"
-                  >
-                    █
-                  </motion.span>
                 </motion.div>
               </div>
             </div>
@@ -203,7 +193,7 @@ export const HeroSection = () => {
               View Projects
             </motion.a>
           </motion.div>
-        </motion.div>
+        </motion.div>     
       </div>
     </section>
   );

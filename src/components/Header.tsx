@@ -1,24 +1,21 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 
 export const Header = () => {
-  const [currentTime, setCurrentTime] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const navItems = ['services', 'about', 'experience', 'projects', 'contact'];
+  const navItems = ['services', 'experience', 'projects', 'contact'];
   
-    // Smooth scroll handler
-    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: string) => {
-      e.preventDefault();
-      const section = document.getElementById(item);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
+  // Smooth scroll handler
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: string) => {
+    e.preventDefault();
+    const section = document.getElementById(item);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Scroll to top handler
+  const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <motion.header 
@@ -30,14 +27,17 @@ export const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Terminal-style logo */}
-          <motion.div 
-            className="flex items-center space-x-2"
+          <motion.button 
+            className="flex items-center space-x-2 cursor-pointer hover:scale-105 transition-transform duration-300"
+            onClick={handleLogoClick}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             <div className="w-3 h-3 rounded-full bg-[#ff0080] animate-pulse"></div>
             <div className="w-3 h-3 rounded-full bg-[#00ffff] animate-pulse" style={{ animationDelay: '0.2s' }}></div>
             <div className="w-3 h-3 rounded-full bg-[#00d4ff] animate-pulse" style={{ animationDelay: '0.4s' }}></div>
             <span className="ml-4 text-[#00d4ff] font-mono">portfolio.exe</span>
-          </motion.div>
+          </motion.button>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -70,7 +70,7 @@ export const Header = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
-            [{currentTime.toLocaleTimeString()}]
+            {/* [{currentTime.toLocaleTimeString()}] */}
           </motion.div>
         </div>
       </div>
