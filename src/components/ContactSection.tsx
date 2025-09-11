@@ -60,7 +60,7 @@ export const ContactSection = () => {
         >
           <h2 className="text-4xl mb-4">
             <span className="text-[#00d4ff] font-mono">{'>'}</span>
-            <span className="text-white ml-2 text-3xl font-normal sm:text-4xl">contact.init()</span>
+            <span className="text-white ml-2 text-3xl font-normal sm:text-4xl">contact</span>
           </h2>
           <p className="text-gray-400 font-mono">let's build something extraordinary together</p>
         </motion.div>
@@ -80,7 +80,7 @@ export const ContactSection = () => {
               className="glassmorphism rounded-xl p-8 border border-[#00ffff]/30"
             >
               <h3 className="text-2xl text-white mb-6 font-mono">
-                <span className="text-[#00ffff]">{'>'}</span> social_links[]
+                <span className="text-[#00ffff]">{'>'}</span> social_link
               </h3>
 
               <div className="grid grid-cols-2 gap-4">

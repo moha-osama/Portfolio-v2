@@ -52,7 +52,7 @@ export const ExperienceSection = () => {
         >
           <h2 className="text-4xl mb-4">
             <span className="text-[#00d4ff] font-mono">{'>'}</span>
-            <span className="text-white ml-2 text-3xl font-normal sm:text-4xl">work_experience.log</span>
+            <span className="text-white ml-2 text-3xl font-normal sm:text-4xl">work_experience</span>
           </h2>
           <p className="text-gray-400 font-mono">my professional journey and contributions</p>
         </motion.div>

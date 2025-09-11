@@ -60,7 +60,7 @@ export const HeroSection = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden mt-6 sm:mt-0">
+    <section className="min-h-[calc(100vh-3.5rem)] sm:min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated grid background */}
       <div className="absolute inset-0 grid-background opacity-20"></div>
 
