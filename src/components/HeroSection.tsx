@@ -60,7 +60,7 @@ export const HeroSection = () => {
   ];
 
   return (
-    <section className="min-h-[calc(100vh-3.5rem)] sm:min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-2 sm:px-0 py-8 sm:py-0">
       {/* Animated grid background */}
       <div className="absolute inset-0 grid-background opacity-20"></div>
 
@@ -165,7 +165,7 @@ export const HeroSection = () => {
                   className="hidden sm:flex items-center space-x-2 pt-4"
                 >
                   <span className="text-[#8a2be2]">$</span>
-                  <span className="text-gray-400">ready_to_collaborate</span>
+                  <a href="#contact" className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-200 cursor-pointer">ready_to_collaborate</a>
                 </motion.div>
               </div>
             </div>

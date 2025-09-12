@@ -37,7 +37,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#0a0a0f] text-white relative overflow-x-hidden">
+    <div className="bg-[#0a0a0f] text-white relative">
       {/* Global background effects */}
       <div className="fixed inset-0 pointer-events-none">
         {/* Animated gradient overlay */}
@@ -78,12 +78,8 @@ export default function App() {
           />
         ))}
       </div>
-
-      {/* Main content */}
-      <div className="relative z-10">
         <Header />
-        
-        <main>
+        <main className=' relative z-10'>
           <HeroSection />
 
           {/* Section divider with neon line */}
@@ -172,7 +168,6 @@ export default function App() {
 
           <ContactSection />
         </main>
-      </div>
 
       {/* Scroll to top button */}
       {showScrollTop && (

@@ -37,7 +37,7 @@ const services = [
     title: "AI & NLP Integration",
     icon: Bot,
     description:
-      "Enhancing apps with AI features like sentiment analysis, recommendations, and intelligent chatbots.",
+"Elevate user experiences with AI-driven features including intelligent chatbots, personalized recommendations, and sentiment analysis.",
     features: [
       "Chatbots & Virtual Assistants",
       "Search & Knowledge Retrieval",
