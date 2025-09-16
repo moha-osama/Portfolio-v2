@@ -27,7 +27,7 @@ export const ContactSection = () => {
     {
       label: "linkedin",
       icon: <LinkedInIcon />,
-      href: "https://www.linkedin.com/in/mohamed-osama-4a38a0206/",
+      href: "https://www.linkedin.com/in/moha-osama/",
       color: "#00ffff",
     },
     {

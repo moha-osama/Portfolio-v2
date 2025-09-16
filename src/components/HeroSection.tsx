@@ -42,7 +42,7 @@ export const HeroSection = () => {
     {
       label: "linkedin",
       icon: <LinkedInIcon />,
-      link: "https://www.linkedin.com/in/mohamed-osama-4a38a0206/",
+      link: "https://www.linkedin.com/in/moha-osama/",
       color: "#00ffff",
     },
     {
