@@ -6,8 +6,19 @@ import dreamBilll from '/img/dreambill.webp';
 import jewelry from '/img/jewelry.webp';
 import nuiq from '/img/nuiq.webp';
 import shoestore from '/img/shoestore.webp';
+import restaurantApp from '/img/restaurant_app.webp';
 
 const projects = [
+  {
+  id: 8,
+  title: "Restaurant Discovery App",
+  description: "A full-stack web app for discovering real restaurants via OpenStreetMap integration. Users can leave reviews, while event tracking captures user behavior for analytics, and NLP processes reviews to extract sentiment insights. Scalable backend with Redis caching ensures fast performance.",
+  tech: ["Node.js", "Express", "React.js", "PostgreSQL", "Prisma", "Redis", "React", "TypeScript", "Tailwind CSS", "OpenStreetMap", "NLP (Sentiment Analysis)"],
+  image: restaurantApp,
+  github: "https://github.com/moha-osama/Restaurant-Review-Platform",
+  live: "#",
+  status: "in-progress"
+  },
   {
     id: 2,
     title: "Dreambill",
@@ -167,16 +178,16 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
           </p>
 
           {/* Tech stack */}
-          <div className="flex flex-wrap gap-2">
-            {project.tech.map((tech: string, i: number) => (
-              <span
-                key={i}
-                className="px-3 py-1 text-xs font-mono bg-[#1a1a2e] border border-[#8a2be2]/30 rounded-full text-[#8a2be2] hover:border-[#8a2be2]/60 transition-colors duration-300"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech: string, i: number) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 text-xs font-mono cursor-pointer bg-[#232347] border border-[#00d4ff]/60 rounded-full text-[#00d4ff] font-semibold shadow-md hover:bg-[#00d4ff] hover:text-[#232347] hover:border-[#00d4ff] transition-colors duration-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
 
           {/* Action buttons */}
           <div className="flex space-x-4 pt-4">
