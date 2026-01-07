@@ -1,32 +1,46 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
-import { Github, Linkedin, Mail } from 'lucide-react';
-import trackEvent from '../../utils/analytics';
+import { useState, useEffect } from "react";
+import { motion } from "motion/react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import trackEvent from "../../utils/analytics";
 
 // Custom Resume Icon (simple SVG)
 const ResumeIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width={20} height={20} viewBox="0 0 20 20" fill="none" {...props}>
-    <rect x="4" y="2" width="12" height="16" rx="2" stroke="#8a2be2" strokeWidth="2"/>
-    <line x1="7" y1="6" x2="13" y2="6" stroke="#8a2be2" strokeWidth="1.5"/>
-    <line x1="7" y1="10" x2="13" y2="10" stroke="#8a2be2" strokeWidth="1.5"/>
-    <line x1="7" y1="14" x2="11" y2="14" stroke="#8a2be2" strokeWidth="1.5"/>
+    <rect
+      x="4"
+      y="2"
+      width="12"
+      height="16"
+      rx="2"
+      stroke="#8a2be2"
+      strokeWidth="2"
+    />
+    <line x1="7" y1="6" x2="13" y2="6" stroke="#8a2be2" strokeWidth="1.5" />
+    <line x1="7" y1="10" x2="13" y2="10" stroke="#8a2be2" strokeWidth="1.5" />
+    <line x1="7" y1="14" x2="11" y2="14" stroke="#8a2be2" strokeWidth="1.5" />
   </svg>
 );
 
-const GitHubIcon = (props: React.SVGProps<SVGSVGElement>) => <Github size={20} color="#00d4ff" {...props} />;
-const LinkedInIcon = (props: React.SVGProps<SVGSVGElement>) => <Linkedin size={20} color="#00ffff" {...props} />;
-const MailIcon = (props: React.SVGProps<SVGSVGElement>) => <Mail size={20} color="#ff0080" {...props} />;
+const GitHubIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <Github size={20} color="#00d4ff" {...props} />
+);
+const LinkedInIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <Linkedin size={20} color="#00ffff" {...props} />
+);
+const MailIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <Mail size={20} color="#ff0080" {...props} />
+);
 
 export const HeroSection = () => {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const fullText = "Mohamed Osama";
 
   useEffect(() => {
     if (currentIndex < fullText.length) {
       const timer = setTimeout(() => {
-        setDisplayText(prev => prev + fullText[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
+        setDisplayText((prev) => prev + fullText[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
       }, 150);
       return () => clearTimeout(timer);
     }
@@ -48,7 +62,7 @@ export const HeroSection = () => {
     {
       label: "resume",
       icon: <ResumeIcon />,
-      link: "https://drive.google.com/file/d/1pQoI4FPvK6Jr5SKrKt1fl2JP50Df8glX/view?usp=drive_link",
+      link: "https://drive.google.com/file/d/1NUWBTWTUXOFJmAJrZubz0qxywEfu-G77/view?usp=drive_link",
       color: "#8a2be2",
     },
     {
@@ -80,14 +94,16 @@ export const HeroSection = () => {
                 <div className="w-3 h-3 rounded-full bg-[#ff0080]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#00ffff]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#00d4ff]"></div>
-                <span className="ml-4 text-gray-400 font-mono text-sm">terminal://portfolio</span>
+                <span className="ml-4 text-gray-400 font-mono text-sm">
+                  terminal://portfolio
+                </span>
               </div>
 
               {/* Terminal content */}
               <div className="font-mono space-y-6">
                 <div className="text-[#00d4ff]">$ whoami</div>
-                
-                <motion.h1 
+
+                <motion.h1
                   className="text-3xl md:text-5xl lg:text-6xl text-white"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -123,8 +139,12 @@ export const HeroSection = () => {
                 >
                   <div className="text-[#00d4ff]">$ cat summary.md</div>
                   <div className="text-gray-300 leading-relaxed pl-4 max-w-2xl">
-                    Expert Full Stack Developer & Product Focused Builder with extensive experience 
-                    developing <span className="text-[#00ffff]">scalable applications</span> from the ground up.
+                    Expert Full Stack Developer & Product Focused Builder with
+                    extensive experience developing{" "}
+                    <span className="text-[#00ffff]">
+                      scalable applications
+                    </span>{" "}
+                    from the ground up.
                   </div>
                 </motion.div>
 
@@ -147,12 +167,14 @@ export const HeroSection = () => {
                         transition={{ duration: 0.5, delay: 3.5 + index * 0.1 }}
                         whileHover={{ y: -2 }}
                         className="p-3 glassmorphism rounded-full border border-gray-700 hover:border-opacity-60 transition-all duration-300 group"
-                        style={{ 
+                        style={{
                           borderColor: `${item.color}40`,
-                          backgroundColor: `${item.color}05`
+                          backgroundColor: `${item.color}05`,
                         }}
                       >
-                        <span className="group-hover:animate-pulse">{item.icon}</span>
+                        <span className="group-hover:animate-pulse">
+                          {item.icon}
+                        </span>
                       </motion.a>
                     ))}
                   </div>
@@ -165,7 +187,12 @@ export const HeroSection = () => {
                   className="hidden sm:flex items-center space-x-2 pt-4"
                 >
                   <span className="text-[#8a2be2]">$</span>
-                  <a href="#contact" className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-200 cursor-pointer">ready_to_collaborate</a>
+                  <a
+                    href="#contact"
+                    className="text-gray-400 hover:text-[#00d4ff] transition-colors duration-200 cursor-pointer"
+                  >
+                    ready_to_collaborate
+                  </a>
                 </motion.div>
               </div>
             </div>
@@ -186,7 +213,7 @@ export const HeroSection = () => {
             >
               View My Services
             </motion.a>
-            
+
             <motion.a
               href="#projects"
               whileHover={{ y: -2 }}
@@ -195,7 +222,7 @@ export const HeroSection = () => {
               View Projects
             </motion.a>
           </motion.div>
-        </motion.div>     
+        </motion.div>
       </div>
     </section>
   );
